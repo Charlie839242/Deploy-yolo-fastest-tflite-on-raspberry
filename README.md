@@ -1,2 +1,3 @@
 # Deploy-yolo-fastest-tflite-on-raspberry
-This project deploys a yolo fastest model in the form of tflite on raspberry 3b+. The model is from another repository of mine called -Trash-Classification-Car
+**这个项目将[垃圾分类小车](https://github.com/Charlie839242/-Trash-Classification-Car/blob/main/README.md)中的tflite模型移植到了树莓派3b+上面。**  
+## 一些问题

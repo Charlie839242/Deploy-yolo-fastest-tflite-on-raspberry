@@ -34,7 +34,7 @@ python3 TFLite_detection_stream.py            :运行py文件
 ## 从零部署流程  
 以***detect-camera-stream***为例。  
 
-### 1.创建虚拟python环境：
+&emsp### 1.创建虚拟python环境：
 创建一个tflite文件夹，创建虚拟环境：
 ```
 cd tflite                                     :进入tflite

@@ -18,18 +18,6 @@
 关于运行的命令，存放在***instruction.txt***之中。  
 
 
-## 如何直接使用
-下载所有文件，以检测摄像头视频流为例(即detect-camera-stream)：
-首先下载依赖:
-```
-cd tflite                                     :进入tflite
-bash get_pi_requirements.sh                   :下载以来
-```
-接着输入以下命令：  
-```
-source tflite-env/bin/activate                :进入虚拟python环境
-python3 TFLite_detection_stream.py            :运行py文件
-```
 
 ## 从零部署流程  
 以***detect-camera-stream***为例。  
@@ -69,5 +57,7 @@ python3 TFLite_detection_stream.py
 ```
 即可看到效果
 ### 注意：若是自己的训练的模型而不是该项目里的，需要到TFLite_detection_stream.py中修改图片分辨率等参数。
+
+
 
 

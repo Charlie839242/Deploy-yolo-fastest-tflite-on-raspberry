@@ -25,7 +25,7 @@
 &emsp;&emsp;1. 确保电脑上有python3.7解释器：
 &emsp;&emsp;2. 安装virtualenv：
 ```
-&emsp;&emsp;python3 -m venv tflite-env 
+python3 -m venv tflite-env 
 ```
 &emsp;&emsp;3. 下载该项目所有文件。
 &emsp;&emsp;4. 进入tflite文件夹，进入虚拟python环境：

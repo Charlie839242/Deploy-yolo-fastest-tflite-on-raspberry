@@ -4,7 +4,7 @@
 
 **(之后有时间会加上nms处理)**
 
-&ensp;关于如何在linux端运行tflite模型的问题，官方文档中已经给的非常清楚，详见[tflite.API](https://tensorflow.google.cn/lite/api_docs/python/tf/lite/Interpreter)  
+关于如何在linux端运行tflite模型的问题，官方文档中已经给的非常清楚，详见[tflite.API](https://tensorflow.google.cn/lite/api_docs/python/tf/lite/Interpreter)  
   
 由于yolo fastest的输出格式和其他版本的yolo不太一样，所以其yolo输出的解码模式和其他版本yolo不同，需要引起注意。若要部署的模型不是yolo fastest tflite而是其他yolo，该项目可能不能直接适用，
 但根据能力进行修改即可。
@@ -34,7 +34,7 @@ python3 TFLite_detection_stream.py            :运行py文件
 ## 从零部署流程  
 以***detect-camera-stream***为例。  
 
-1.创建虚拟python环境：
+&emsp;&emsp;1.创建虚拟python环境：
 创建一个tflite文件夹，创建虚拟环境：
 ```
 cd tflite                                     :进入tflite
@@ -42,7 +42,7 @@ sudo pip3 install virtualenv                  :创建虚拟环境需要的工具
 python3 -m venv tflite-env                    :创建虚拟环境，虚拟环境储存在tflite/tflite-env中
 source tflite-env/bin/activate                :进入虚拟环境，每次推出terminal后都要执行此命令以进入虚拟环境
 ```
-### 2.安装包和依赖：
+&emsp;&emsp;### 2.安装包和依赖：
 在进入虚拟环境后，提取出该项目中的get_pi_requirements.sh，放在tflite文件夹下：
 ```
 bash get_pi_requirements.sh                   :下载包和依赖
@@ -61,8 +61,8 @@ ImportError: libjasper.so.1: cannot open shared object file: No such file or dir
 sudo apt-get install libjasper-dev
 ```
 
-### 3. 在tflite文件夹下创建Sample_TFlite_model文件夹，其中存放训练好的tflite模型。
-### 4. 运行模型
+&emsp;&emsp;### 3. 在tflite文件夹下创建Sample_TFlite_model文件夹，其中存放训练好的tflite模型。
+&emsp;&emsp;### 4. 运行模型
 在tflite文件夹下，运行：
 ```
 python3 TFLite_detection_stream.py

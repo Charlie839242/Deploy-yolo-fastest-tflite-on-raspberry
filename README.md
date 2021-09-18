@@ -66,7 +66,7 @@ import cv2
 ```
 ImportError: libjasper.so.1: cannot open shared object file: No such file or directory
 ```
-&emsp;&emsp;这个报错说明少安装了依赖，执行以下命令即可：
+&emsp;&emsp;这个报错说明少安装了依赖，执行以下命令即可：(我是这样解决的，若解决不了请百度)
 ```
 sudo apt-get install libjasper-dev
 ```

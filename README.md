@@ -9,6 +9,9 @@
 由于yolo fastest的输出格式和其他版本的yolo不太一样，所以其yolo输出的解码模式和其他版本yolo不同，需要引起注意。若要部署的模型不是yolo fastest tflite而是其他yolo，该项目可能不能直接适用，
 但根据能力进行修改即可。
 
+## 实机效果
+![image](https://github.com/Charlie839242/Deploy-yolo-fastest-tflite-on-raspberry/blob/main/img/0.gif)  
+
 ## 项目内容
 本项目包含两个文件夹，***detect-camera-stream***和***detect-single-img***。  
 模型文件存在两个文件夹下的tflite/Sample_TFlite_model中。  

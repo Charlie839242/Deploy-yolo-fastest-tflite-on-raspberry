@@ -21,7 +21,22 @@
 
 关于运行的命令，存放在***instruction.txt***之中。  
 
-## 直接运行该项目
+## 如何直接运行该项目:
+&emsp;&emsp;1. 确保电脑上有python3.7解释器：
+&emsp;&emsp;2. 安装virtualenv：
+```
+&emsp;&emsp;python3 -m venv tflite-env 
+```
+&emsp;&emsp;3. 下载该项目所有文件。
+&emsp;&emsp;4. 进入tflite文件夹，进入虚拟python环境：
+```
+source tflite-env/bin/activate
+```
+&emsp;&emsp;5. 在tflite文件夹下，运行instruction.txt中的指令：
+```
+python3 TFLite_detection_image.py
+python3 TFLite_detection_stream.py
+```
 
 
 ## 从零部署流程  

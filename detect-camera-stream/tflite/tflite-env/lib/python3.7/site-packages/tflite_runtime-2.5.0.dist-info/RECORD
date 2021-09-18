@@ -1,0 +1,10 @@
+tflite_runtime-2.5.0.dist-info/INSTALLER,sha256=zuuue4knoyJ-UwPPXg8fezS7VCrXJQrAP7zeNuwvFQg,4
+tflite_runtime-2.5.0.dist-info/METADATA,sha256=OZ9UBRaP2f9W8pVAZ9GZoM-TalmEtnWlvsyaUeopoTI,1438
+tflite_runtime-2.5.0.dist-info/RECORD,,
+tflite_runtime-2.5.0.dist-info/WHEEL,sha256=GMu0CcHnECe7JSPnzBUPyOsrcZoHb7dOBGXgpe8vHSQ,104
+tflite_runtime-2.5.0.dist-info/top_level.txt,sha256=uNbSt_JkE5qb43UeqR4Wx6_Y6A5613g6gtS49welF08,15
+tflite_runtime/__init__.py,sha256=cd6AUq8Ce7I6DDvd8GalJFcQZN01BaZ-_BdOjJnBVzA,83
+tflite_runtime/__pycache__/__init__.cpython-37.pyc,,
+tflite_runtime/__pycache__/interpreter.cpython-37.pyc,,
+tflite_runtime/_pywrap_tensorflow_interpreter_wrapper.cpython-37m-arm-linux-gnueabihf.so,sha256=D1FVIA3MikSEw_f3whtG0CvsaVOzsA6vy9_Krbo7UB8,2426928
+tflite_runtime/interpreter.py,sha256=eL2Amfcg9gqLHWmHB5aMeN7FWz1e0Xt-aKEDYKy8S3g,22831

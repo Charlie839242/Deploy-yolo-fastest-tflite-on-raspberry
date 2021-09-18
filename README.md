@@ -21,13 +21,14 @@
 
 关于运行的命令，存放在***instruction.txt***之中。  
 
+## 直接运行该项目
 
 
 ## 从零部署流程  
-以***detect-camera-stream***为例。  
+&emsp;&emsp;以***detect-camera-stream***为例。  
 
 &emsp;&emsp;**1. 创建虚拟python环境：**
-创建一个tflite文件夹，创建虚拟环境：
+&emsp;&emsp;创建一个tflite文件夹，创建虚拟环境：
 ```
 cd tflite                                     :进入tflite
 sudo pip3 install virtualenv                  :创建虚拟环境需要的工具
@@ -35,20 +36,20 @@ python3 -m venv tflite-env                    :创建虚拟环境，虚拟环境
 source tflite-env/bin/activate                :进入虚拟环境，每次推出terminal后都要执行此命令以进入虚拟环境
 ```
 &emsp;&emsp;**2. 安装包和依赖：**
-在进入虚拟环境后，提取出该项目中的get_pi_requirements.sh，放在tflite文件夹下：
+&emsp;&emsp;在进入虚拟环境后，提取出该项目中的get_pi_requirements.sh，放在tflite文件夹下：
 ```
 bash get_pi_requirements.sh                   :下载包和依赖
 ```
-此时可通过以下代码来测试cv2模块是否安装好(opencv-python模块经常抽风)：
+&emsp;&emsp;此时可通过以下代码来测试cv2模块是否安装好(opencv-python模块经常抽风)：
 ```
 python3
 import cv2
 ```  
-此时若没有报错则说明opencv-python安装成功，但经常出现以下错误：
+&emsp;&emsp;此时若没有报错则说明opencv-python安装成功，但经常出现以下错误：
 ```
 ImportError: libjasper.so.1: cannot open shared object file: No such file or directory
 ```
-这个报错说明少安装了依赖，执行以下命令即可：
+&emsp;&emsp;这个报错说明少安装了依赖，执行以下命令即可：
 ```
 sudo apt-get install libjasper-dev
 ```
@@ -60,7 +61,7 @@ sudo apt-get install libjasper-dev
 ```
 python3 TFLite_detection_stream.py
 ```
-即可看到效果
+&emsp;&emsp;即可看到效果
 ### 注意：若是自己的训练的模型而不是该项目里的，需要到TFLite_detection_stream.py中修改图片分辨率等参数。
 
 

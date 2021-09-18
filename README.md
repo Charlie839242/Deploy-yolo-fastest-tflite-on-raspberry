@@ -4,7 +4,7 @@
 
 **(之后有时间会加上nms处理)**
 
-&ensp关于如何在linux端运行tflite模型的问题，官方文档中已经给的非常清楚，详见[tflite.API](https://tensorflow.google.cn/lite/api_docs/python/tf/lite/Interpreter)  
+&ensp;关于如何在linux端运行tflite模型的问题，官方文档中已经给的非常清楚，详见[tflite.API](https://tensorflow.google.cn/lite/api_docs/python/tf/lite/Interpreter)  
   
 由于yolo fastest的输出格式和其他版本的yolo不太一样，所以其yolo输出的解码模式和其他版本yolo不同，需要引起注意。若要部署的模型不是yolo fastest tflite而是其他yolo，该项目可能不能直接适用，
 但根据能力进行修改即可。

@@ -14,6 +14,7 @@
 ## 实机效果
 ![image](https://github.com/Charlie839242/Deploy-yolo-fastest-tflite-on-raspberry/blob/main/img/0.gif)    
 该项目在树莓派3b+上可以跑到平均25帧每秒。  
+![image](https://github.com/Charlie839242/Deploy-yolo-fastest-tflite-on-raspberry/blob/main/img/FPS-on-3b+.jpg) 
 
 ## 项目内容
 本项目包含两个文件夹，***detect-camera-stream***和***detect-single-img***。  
@@ -25,7 +26,7 @@
 关于运行的命令，存放在***instruction.txt***之中。  
 
 ## 如何直接运行该项目:
-&emsp;&emsp;**1. 确保电脑上有python3.7解释器。**  
+&emsp;&emsp;**1. 确保树莓派上有python3.7解释器。**  
 
 &emsp;&emsp;**2. 安装virtualenv：**
 ```

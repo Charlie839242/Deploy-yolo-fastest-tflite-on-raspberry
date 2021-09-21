@@ -14,7 +14,6 @@
 ## 实机效果
 ![image](https://github.com/Charlie839242/Deploy-yolo-fastest-tflite-on-raspberry/blob/main/img/0.gif)    
 该项目在树莓派3b+上可以跑到平均25帧每秒。  
-该项目在树莓派4b上可以跑到xxx
 
 ## 项目内容
 本项目包含两个文件夹，***detect-camera-stream***和***detect-single-img***。  

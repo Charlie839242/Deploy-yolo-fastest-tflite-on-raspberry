@@ -2,7 +2,7 @@
 **这个项目将[垃圾分类小车](https://github.com/Charlie839242/-Trash-Classification-Car/blob/main/README.md)中的tflite模型移植到了树莓派3b+上面。**  
 **该项目主要是为了记录在树莓派部署yolo fastest tflite的流程**  
 
-**(之后有时间会加上nms处理)**
+**(之后有时间会尝试用C++部署来提升性能)**
 
 ## 项目中遇到的问题
 ### 1. 如何运行tflite文件？  
@@ -14,7 +14,7 @@
 ## 实机效果
 ![image](https://github.com/Charlie839242/Deploy-yolo-fastest-tflite-on-raspberry/blob/main/img/0.gif)    
 该项目在树莓派3b+上可以跑到平均25帧每秒。  
-![image](https://github.com/Charlie839242/Deploy-yolo-fastest-tflite-on-raspberry/blob/main/img/FPS-on-3b+.jpg) 
+![image](https://github.com/Charlie839242/Deploy-yolo-fastest-tflite-on-raspberry/blob/main/img/FPS_on_3b+.jpg) 
 
 ## 项目内容
 本项目包含两个文件夹，***detect-camera-stream***和***detect-single-img***。  
@@ -84,7 +84,7 @@ sudo apt-get install libjasper-dev
 python3 TFLite_detection_stream.py
 ```
 &emsp;&emsp;即可看到效果
-### 注意：若是自己的训练的模型而不是该项目里的，需要到TFLite_detection_stream.py中修改图片分辨率等参数。  
+#### 注意：若是自己的训练的模型而不是该项目里的，需要到TFLite_detection_stream.py中修改图片分辨率等参数。  
 
 
 ## 由于树莓派要和小车通信，因此这里在记录一下在树莓派用AMA0实现串口通信的过程。  
@@ -118,6 +118,7 @@ sudo reboot
 至此串口设置就完了，因为树莓派的python3解释器自带serial库，但我们之前创建的虚拟环境没有，所以要在虚拟环境再次安装：
 ```
 sudo pip3 install pyserial
+sudo pip3 install serial
 ```
 可以通过以下代码来控制串口：
 ```

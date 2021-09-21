@@ -21,7 +21,7 @@
 
 ## 项目内容
 本项目包含两个文件夹，***detect-camera-stream***和***detect-single-img***。  
-模型文件存在两个文件夹下的tflite/Sample_TFlite_model中。  
+两个文件夹中结构相同，模型文件存在两个文件夹下的tflite/Sample_TFlite_model中，主程序写在TFLite_detection_stream.py和TFLite_detection_img.py里，yolo相关的函数写在yolo_layer.py中。    
 
 ***detect-camera-stream***文件可以在树莓派3b+连接USB摄像头的情况下，实时的用yolo-fastest-tflite模型对物体进行检测。  
 ***detect-single-img***文件可以对tflite/下的4.jpg图片进行检测。  

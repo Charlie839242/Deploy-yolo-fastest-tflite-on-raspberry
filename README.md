@@ -26,7 +26,7 @@
 关于运行的命令，存放在***instruction.txt***之中。  
 
 ## 如何直接运行该项目:
-&emsp;&emsp;**1. 确保电脑上有python3.7解释器。**  
+&emsp;&emsp;**1. 确保树莓派上有python3.7解释器。**  
 
 &emsp;&emsp;**2. 安装virtualenv：**
 ```

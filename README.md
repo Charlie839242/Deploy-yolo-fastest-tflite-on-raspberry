@@ -11,10 +11,13 @@
 由于yolo fastest的输出格式和其他版本的yolo不太一样，所以其yolo输出的解码模式和其他版本yolo不同，需要引起注意。若要部署的模型不是yolo fastest tflite而是其他yolo，该项目可能不能直接适用，
 但根据能力进行修改即可。
 
-## 实机效果
+## 模型实机效果
 ![image](https://github.com/Charlie839242/Deploy-yolo-fastest-tflite-on-raspberry/blob/main/img/0.gif)    
 该项目在树莓派3b+上可以跑到平均25帧每秒。  
 ![image](https://github.com/Charlie839242/Deploy-yolo-fastest-tflite-on-raspberry/blob/main/img/FPS_on_3b+.jpg) 
+
+## 小车实机效果  
+![image](https://github.com/Charlie839242/Deploy-yolo-fastest-tflite-on-raspberry/blob/main/img/demo_1.gif) 
 
 ## 项目内容
 本项目包含两个文件夹，***detect-camera-stream***和***detect-single-img***。  

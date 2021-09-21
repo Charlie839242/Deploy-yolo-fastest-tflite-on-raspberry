@@ -12,13 +12,15 @@
 但根据能力进行修改即可。
 
 ## 实机效果
-![image](https://github.com/Charlie839242/Deploy-yolo-fastest-tflite-on-raspberry/blob/main/img/0.gif)  
+![image](https://github.com/Charlie839242/Deploy-yolo-fastest-tflite-on-raspberry/blob/main/img/0.gif)    
+该项目在树莓派3b+上可以跑到平均25帧每秒。  
+该项目在树莓派4b上可以跑到xxx
 
 ## 项目内容
 本项目包含两个文件夹，***detect-camera-stream***和***detect-single-img***。  
 模型文件存在两个文件夹下的tflite/Sample_TFlite_model中。  
 
-***detect-camera-stream***文件可以在树莓派3b+连接USB摄像头的情况下，实时的用yolo-fastest-tflite模型对物体进行检测。帧数可以达到12帧。  
+***detect-camera-stream***文件可以在树莓派3b+连接USB摄像头的情况下，实时的用yolo-fastest-tflite模型对物体进行检测。  
 ***detect-single-img***文件可以对tflite/下的4.jpg图片进行检测。  
 
 关于运行的命令，存放在***instruction.txt***之中。  

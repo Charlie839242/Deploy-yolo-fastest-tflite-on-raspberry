@@ -118,6 +118,7 @@ sudo reboot
 至此串口设置就完了，因为树莓派的python3解释器自带serial库，但我们之前创建的虚拟环境没有，所以要在虚拟环境再次安装：
 ```
 sudo pip3 install pyserial
+sudo pip3 install serial
 ```
 可以通过以下代码来控制串口：
 ```

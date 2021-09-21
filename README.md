@@ -79,7 +79,49 @@ sudo apt-get install libjasper-dev
 python3 TFLite_detection_stream.py
 ```
 &emsp;&emsp;即可看到效果
-### 注意：若是自己的训练的模型而不是该项目里的，需要到TFLite_detection_stream.py中修改图片分辨率等参数。
+### 注意：若是自己的训练的模型而不是该项目里的，需要到TFLite_detection_stream.py中修改图片分辨率等参数。  
+
+
+## 由于树莓派要和小车通信，因此这里在记录一下在树莓派用AMA0实现串口通信的过程。  
+首先安装gedit编辑器，比vim好用一些：  
+```
+sudo apt-get install gedit
+```
+然后禁用串口启动，开启串口硬件：  
+```
+sudo raspi-config
+interfacing options --> would you like a login shell to be accessible  over serial? --> No
+                    --> would you like the serial port hardware to be enabled? --> Yes
+```
+由于蓝牙和AMA0使用的是同一个GPIO，将ttyAMA0和ttyS0的映射调换：
+```
+sudo gedit /boot/config.txt
+在最后一行添加：dtoverlay=pi3-miniuart-bt
+sudo reboot
+```
+因为控制台使用串口和通信串口只能存在一个，所以要禁用控制台来使用串口：
+```
+sudo systemctl stop serial-getty@ttyAMA0.service
+sudo systemctl disable serial-getty@ttyAMA0.service
+```
+然后删除serial0相关：
+```
+sudo gedit /boot/cmdline.txt
+删除 console=serial0,115200 ，没有就不管
+sudo reboot
+```
+至此串口设置就完了，因为树莓派的python3解释器自带serial库，但我们之前创建的虚拟环境没有，所以要在虚拟环境再次安装：
+```
+sudo pip3 install pyserial
+```
+可以通过以下代码来控制串口：
+```
+import serial
+ser = serial.Serial('/dev/ttyAMA0',115200)      # 获取串口
+if(ser.isOpen):
+  ser.write(b'123')                             # 出现编码问题可以尝试加上 .encode()
+```
+
 
 
 

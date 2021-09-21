@@ -2,7 +2,7 @@
 **这个项目将[垃圾分类小车](https://github.com/Charlie839242/-Trash-Classification-Car/blob/main/README.md)中的tflite模型移植到了树莓派3b+上面。**  
 **该项目主要是为了记录在树莓派部署yolo fastest tflite的流程**  
 
-**(之后有时间会加上nms处理)**
+**(之后有时间会尝试用C++部署来提升性能)**
 
 ## 项目中遇到的问题
 ### 1. 如何运行tflite文件？  

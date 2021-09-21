@@ -84,7 +84,7 @@ sudo apt-get install libjasper-dev
 python3 TFLite_detection_stream.py
 ```
 &emsp;&emsp;即可看到效果
-### 注意：若是自己的训练的模型而不是该项目里的，需要到TFLite_detection_stream.py中修改图片分辨率等参数。  
+#### 注意：若是自己的训练的模型而不是该项目里的，需要到TFLite_detection_stream.py中修改图片分辨率等参数。  
 
 
 ## 由于树莓派要和小车通信，因此这里在记录一下在树莓派用AMA0实现串口通信的过程。  

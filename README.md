@@ -23,8 +23,8 @@
 本项目包含两个文件夹，***detect-camera-stream***和***detect-single-img***。  
 两个文件夹中结构相同，模型文件存在两个文件夹下的tflite/Sample_TFlite_model中，主程序写在TFLite_detection_stream.py和TFLite_detection_img.py里，yolo相关的函数写在yolo_layer.py中。    
 
-***detect-camera-stream***文件可以在树莓派3b+连接USB摄像头的情况下，实时的用yolo-fastest-tflite模型对物体进行检测。  
-***detect-single-img***文件可以对tflite/下的4.jpg图片进行检测。  
+***detect-camera-stream***文件可以在树莓派3b+连接USB摄像头的情况下，实时的对视频流进行目标检测。  
+***detect-single-img***文件可以对tflite/下的4.jpg图片，即单独一张图片进行检测。  
 
 关于运行的命令，存放在***instruction.txt***之中。  
 
@@ -39,6 +39,7 @@ python3 -m venv tflite-env
 &emsp;&emsp;**4. 进入tflite文件夹，进入虚拟python环境：**
 ```
 source tflite-env/bin/activate
+bash get_pi_requirements.sh                  :若上一步提示缺少环境则执行这一行
 ```
 &emsp;&emsp;**5. 在tflite文件夹下，运行instruction.txt中的指令：**
 ```

@@ -1,1 +1,3 @@
+cd Desktop/demo1/tflite
+source tflite-env/bin/actiavte
 python3 TFLite_detection_stream.py

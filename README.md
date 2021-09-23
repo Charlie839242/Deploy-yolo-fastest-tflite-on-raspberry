@@ -5,12 +5,16 @@
 
 **(之后有时间会尝试用C++部署来提升性能)**
 
-## 项目中遇到的问题
+## 一些问题
 ### 1. 如何运行tflite文件？  
 关于如何在linux端运行tflite模型的问题，官方文档中已经给的非常清楚，详见[tflite.API](https://tensorflow.google.cn/lite/api_docs/python/tf/lite/Interpreter)  
 ### 2. yolo-fastest的解码问题？  
 由于yolo fastest的输出格式和其他版本的yolo不太一样，所以其yolo输出的解码模式和其他版本yolo不同，需要引起注意。若要部署的模型不是yolo fastest tflite而是其他yolo，该项目可能不能直接适用，
 但根据能力进行修改即可。
+### 3.yolo-fastest的源码：[Yolo-Fastest](https://github.com/dog-qiuqiu/Yolo-Fastest)  
+现在yolo fastest的作者推出了V2版本，性能更好。该项目采用的是V1.  
+### 4.关于如何在windows上训练yolo fastest模型，详见本人另一个仓库：[Yolo-Fastest-on-Windows](https://github.com/Charlie839242/YOLO-Fastest-on-a-no-gpu-windows-computer)  
+
 
 ## 模型实机效果
 ![image](https://github.com/Charlie839242/Deploy-yolo-fastest-tflite-on-raspberry/blob/main/img/0.gif)    

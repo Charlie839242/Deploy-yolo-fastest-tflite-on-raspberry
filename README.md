@@ -143,8 +143,8 @@ if(ser.isOpen):
 ***因此，我选择用一个按键开关来控制***  
 ![image](https://github.com/Charlie839242/Deploy-yolo-fastest-tflite-on-raspberry/blob/main/img/switch.jpg)  
 这是一个双刀双掷开关，这里只用其中两个引脚。  
-&emsp;&emsp;**1. 写一个脚本来实现启动py文件：**
-&emsp;&emsp;在/home/pi目录下编写charlie.sh文件：
+&emsp;&emsp;**1. 写一个脚本来实现启动py文件：**  
+&emsp;&emsp;在/home/pi目录下编写charlie.sh文件：  
 ```
 cd /home/pi/Desktop/demo1/tflite
 source tflite-env/bin/activate

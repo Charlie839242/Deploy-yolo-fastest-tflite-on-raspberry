@@ -212,7 +212,7 @@ while(True):
  python3 /home/pi/Desktop/demo1/tflite/GPIO.py &
  (&符号使得其一直在后台运行)
  ```
- 至此，开机后会自动运行GPIO.py,GPIO.py会不停检测引脚3。当按下引脚3后，GPIO.py会调用charlie.py来运行TFLite_detection_stream.py。TFLite_detection_stream.py会检测引脚5，当按键松开后，TFLite_detection_stream.py会自动退出。这是一个循环。再按下会在启动......  
+ 至此，开机后会自动运行GPIO.py,GPIO.py会不停检测引脚3。当按下引脚3后，GPIO.py会调用charlie.py来运行TFLite_detection_stream.py。TFLite_detection_stream.py会检测引脚5，当按键松开后，TFLite_detection_stream.py会自动退出。这是一个循环。再按下会再启动......  
  
  
 

@@ -153,8 +153,8 @@ python3 TFLite_detection_stream.py
 &emsp;&emsp;此时通过命令行输入bash /home/pi/charlie.sh即可运行py文件。  
 &emsp;&emsp;**2. 连线：**  
 &emsp;&emsp;将树莓派的3，5引脚连到开关的一段，GND连接到另一端。  
-&emsp;&emsp;这样，在初始化时将3，5拉高。当开关按下时，3被拉低，可以此作为启动程序的标志。当开关被松开后，
-&emsp;&emsp;5被拉高，可以此作为退出程序  的标志。  
+&emsp;&emsp;这样，在初始化时将3，5拉高。当开关按下时，3被拉低，可以此作为启动程序的标志。  
+&emsp;&emsp;当开关被松开后，5被拉高，可以此作为退出程序的标志。  
 &emsp;&emsp;**3. 编写GPIO.py:**  
 &emsp;&emsp;首先在虚拟环境中安装RPi库：
 ```

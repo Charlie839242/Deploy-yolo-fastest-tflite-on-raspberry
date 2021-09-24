@@ -137,6 +137,90 @@ if(ser.isOpen):
   ser.write(b'123')                             # 出现编码问题可以尝试加上 .encode()
 ```
 
+## 通过开关来控制识别的开始和结束 
+### 这一部分的文件在该仓库的GPIO文件夹中可找到。  
+***由于通过ssh连接树莓派比较复杂，且每次运行程序都需要电脑在手边，因此若能通过树莓派自身来控制程序的跑与结束，是最方便不过的了。***  
+***因此，我选择用一个按键开关来控制***  
+![image](https://github.com/Charlie839242/Deploy-yolo-fastest-tflite-on-raspberry/blob/main/img/switch.jpg)  
+这是一个双刀双掷开关，这里只用其中两个引脚。  
+&emsp;&emsp;**1. 写一个脚本来实现启动py文件：**
+&emsp;&emsp;在/home/pi目录下编写charlie.sh文件：
+```
+cd /home/pi/Desktop/demo1/tflite
+source tflite-env/bin/activate
+python3 TFLite_detection_stream.py
+```
+&emsp;&emsp;此时通过命令行输入bash /home/pi/charlie.sh即可运行py文件。  
+emsp;&emsp;**2. 连线：**
+emsp;&emsp;将树莓派的3，5引脚连到开关的一段，GND连接到另一端。  
+emsp;&emsp;这样，在初始化时将3，5拉高。当开关按下时，3被拉低，可以此作为启动程序的标志。当开关被松开后，5被拉高，可以此作为退出程序的标志。  
+emsp;&emsp;**3. 编写GPIO.py:**
+emsp;&emsp;首先在虚拟环境中安装RPi库：
+```
+pip3 install RPi.GPIO
+```
+emsp;&emsp;在/home/pi/Desktop/demo1/tflite的目录下编写GPIO.py,使当引脚3被拉低后运行charlie.sh：  
+```
+import time
+import RPi.GPIO as GPIO
+import os
+
+run_yolo_cmd = 'bash /home/pi/charlie.sh'
+
+GPIO.setmode(GPIO.BOARD)
+GPIO.setup(3, GPIO.IN, pull_up_down=GPIO.PUD_UP)
+
+while(True):
+    while(True):
+        x = GPIO.input(3)
+        if(x == 0):
+            break
+
+    print('pressed')
+    time.sleep(1)
+    os.system(run_yolo_cmd)
+    
+
+    while(True):
+        x = GPIO.input(3)
+        if (x == 1):
+            break
+    print('not pressed')
+    time.sleep(1)
+```
+注意，time.sleep(1)是必要的，因为按键在按下和松开时，电压是不稳定的，延时可以消抖。  
+emsp;&emsp;**4. 修改TFLite_detection_stream.py:**  
+emsp;&emsp;修改TFLite_detection_stream.py以使得其拥有检测到引脚5升高后自动结束运行的功能：
+ ```
+ 在TFLite_detection_stream中作如下添加：
+ import RPi.GPIO as GPIO
+ 
+ GPIO.setmode(GPIO.BOARD)
+ GPIO.setup(5, GPIO.IN, pull_up_down=GPIO.PUD_UP)
+ 
+ 在进行模型推理的大循环中添加：
+ x = GPIO.input(5)
+ if(x == 1):
+     print('camera exit')
+     sys.exit(0)
+ ```
+ emsp;&emsp;**5. 实现开机自动运行GPIO.py**  
+ ```
+ sudo gedit /etc/rc.local
+ 在exit 0的上一行添加：
+ python3 /home/pi/Desktop/demo1/tflite/GPIO.py &
+ (&符号使得其一直在后台运行)
+ ```
+ 至此，开机后会自动运行GPIO.py,GPIO.py会不停检测引脚3。当按下引脚3后，GPIO.py会调用charlie.py来运行TFLite_detection_stream.py。TFLite_detection_stream.py会检测引脚5，当按键松开后，TFLite_detection_stream.py会自动退出。这是一个循环。再按下会在启动......  
+ 
+ 
+
+
+
+
+
+
+
 
 
 

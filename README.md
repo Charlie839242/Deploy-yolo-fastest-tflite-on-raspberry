@@ -151,10 +151,10 @@ source tflite-env/bin/activate
 python3 TFLite_detection_stream.py
 ```
 &emsp;&emsp;此时通过命令行输入bash /home/pi/charlie.sh即可运行py文件。  
-&emsp;&emsp;**2. 连线：**
+&emsp;&emsp;**2. 连线：**  
 &emsp;&emsp;将树莓派的3，5引脚连到开关的一段，GND连接到另一端。  
 &emsp;&emsp;这样，在初始化时将3，5拉高。当开关按下时，3被拉低，可以此作为启动程序的标志。当开关被松开后，5被拉高，可以此作为退出程序的标志。  
-&emsp;&emsp;**3. 编写GPIO.py:**
+&emsp;&emsp;**3. 编写GPIO.py:**  
 &emsp;&emsp;首先在虚拟环境中安装RPi库：
 ```
 pip3 install RPi.GPIO
@@ -189,8 +189,8 @@ while(True):
     time.sleep(1)
 ```
 注意，time.sleep(1)是必要的，因为按键在按下和松开时，电压是不稳定的，延时可以消抖。  
-&emsp;&emsp;**4. 修改TFLite_detection_stream.py:**  
-&emsp;&emsp;修改TFLite_detection_stream.py以使得其拥有检测到引脚5升高后自动结束运行的功能：
+&emsp;&emsp;**4. 修改TFLite_detection_stream.py:**    
+&emsp;&emsp;修改TFLite_detection_stream.py以使得其拥有检测到引脚5升高后自动结束运行的功能：  
  ```
  在TFLite_detection_stream中作如下添加：
  import RPi.GPIO as GPIO

@@ -62,8 +62,11 @@ python3 TFLite_detection_stream.py
 ```
 cd tflite                                     :进入tflite
 sudo pip3 install virtualenv                  :创建虚拟环境需要的工具
+
 python3 -m venv tflite-env                    :创建虚拟环境，虚拟环境储存在tflite/tflite-env中
-// 创建虚拟环境时添加 --system-site-packages 使得改虚拟环境可以使用全局域的包
+--> 创建虚拟环境时添加 --system-site-packages 使得改虚拟环境可以使用全局域的包
+
+python3 -m pip install --upgrade pip          :创建虚拟环境后先升级pip
 source tflite-env/bin/activate                :进入虚拟环境，每次推出terminal后都要执行此命令以进入虚拟环境
 ```
 &emsp;&emsp;**2. 安装包和依赖：**  
